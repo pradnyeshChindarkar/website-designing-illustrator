@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .all {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .rect {
+            width: 150px;
+            height: 300px;
+            background: rgb(255, 153, 0);
+        }
+
+        .tri-lt {
+            width: 0;
+            height: 0;
+            border-top: 100px solid rgb(255, 153, 0);
+            border-right: 100px solid transparent;
+            position: absolute;
+        }
+
+        .tri-rt {
+            width: 0;
+            height: 0;
+            border-top: 100px solid rgb(255, 153, 0);
+            border-left: 100px solid transparent;
+            position: relative;
+            right: -50px;
+        }
+
+        .img_center {
+            display: flex;
+            justify-content: center;
+            transform: translateY(-240px);
+        }
+
+        .img_center div img {
+            border-radius: 50%;
+            transform: scale(1.49);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div>
+            <div class="rect">
+
+            </div>
+
+            <div class="tri-lt">
+
+            </div>
+
+            <div class="tri-rt">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="img_center">
+        <div>
+            <img src="bgimg1-removebg-preview.png" >
+        </div>
+    </div>
+</body>
+
+</html>

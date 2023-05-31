@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style link for gallery -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- Style link for gallery -->
+    <!-- fonts link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <!-- fonts link -->
+
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- bootstrap link -->
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- font awesome -->
+
+    <title>A</title>
+    <style>
+        :root {
+            --orange: rgb(243, 156, 26);
+            --yellow: #ffc107;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            /* font-family: 'Crimson Pro', serif; */
+            /* font-family: 'Red Hat Display', sans-serif; */
+            /* font-family: 'Open Sans', sans-serif; */
+            font-family: 'Roboto', sans-serif;
+            background-color: whitesmoke;
+            /* font-family: 'Poppins', sans-serif; */
+        }
+
+        .all {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .rect {
+            width: 150px;
+            height: 313px;
+            background: var(--orange);
+        }
+
+        .tri-lt {
+            width: 0;
+            height: 0;
+            border-top: 100px solid var(--orange);
+            border-right: 100px solid transparent;
+            position: absolute;
+        }
+
+        .tri-rt {
+            width: 0;
+            height: 0;
+            border-top: 100px solid var(--orange);
+            border-left: 100px solid transparent;
+            position: relative;
+            right: -50px;
+        }
+
+        .img_center {
+            display: flex;
+            justify-content: center;
+            transform: translateY(-240px);
+        }
+
+        .img_center div img {
+            border-radius: 50%;
+            transform: scale(1.59);
+        }
+
+        .bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555)), url('/IllustratorWebsite/bg.webp') no-repeat;
+            /* background-position: center; */
+            background-size: cover;
+            height: 100%;
+
+        }
+
+        .name_txt {
+            color: white;
+            font-weight: 400;
+            /* font-family: auto; */
+            /* font-weight: bold; */
+        }
+
+        nav {
+            background-color: var(--orange);
+        }
+
+        .nav-link {
+            color: white;
+            /* font-family: auto; */
+            font-size: 1.3rem;
+            background-color: transparent;
+            /* width: 0%; */
+            /* background-size: 0px; */
+        }
+
+        .nav-link:hover {
+            transition: 0.5s;
+            /* width: 100%; */
+            border-radius: 20px;
+            color: var(--orange);
+        }
+
+
+
+        .navbar-light .navbar-nav .nav-link {
+            color: rgb(73, 22, 22);
+        }
+
+        .navbar-nav li {
+            margin: 0 8px;
+        }
+
+        /* sticky navbar */
+        .sticky {
+            background-color: hsla(45, 100%, 55%, 0.822);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .sticky+.content {
+            padding-top: 60px;
+        }
+
+        /* sticky navbar */
+        .rdownload {
+            background-color: var(--yellow);
+            color: white;
+        }
+
+        .rdownload:hover {
+            background-color: hsl(45, 100%, 54%);
+            color: white;
+        }
+
+        .mouse {
+            /* margin: 30px auto; */
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mouse-icon {
+            width: 29px;
+            height: 45px;
+            box-shadow: 0px 0px 3px black;
+            background-color: whitesmoke;
+            border: 2px solid whitesmoke;
+            border-radius: 15px;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+        }
+
+        .mouse-wheel {
+            height: 4px;
+            margin: 2px auto 0;
+            display: block;
+            width: 4px;
+            background-color: var(--orange);
+            border-radius: 50%;
+            -webkit-animation: 1.6s ease infinite wheel-up-down;
+            -moz-animation: 1.6s ease infinite wheel-up-down;
+            animation: 1.6s ease infinite wheel-up-down;
+        }
+
+        @-webkit-keyframes wheel-up-down {
+            0% {
+                margin-top: 2px;
+            }
+
+            30% {
+                margin-top: 10px;
+            }
+
+            100% {
+                margin-top: 2px;
+            }
+        }
+
+        @-moz-keyframes wheel-up-down {
+            0% {
+                margin-top: 2px;
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            100% {
+                margin-top: 20px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes wheel-up-down {
+            0% {
+                margin-top: 2px;
+
+            }
+
+            20% {
+                margin-top: 2px;
+
+            }
+
+            50% {
+                opacity: 1;
+                /* margin-top: 10px; */
+                height: 8px;
+
+            }
+
+            100% {
+                margin-top: 20px;
+                height: 10px;
+                opacity: 0;
+            }
+        }
+
+
+
+        /* ====================GALLERY CSS======================= */
+
+        /* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+        /* html,body{
+    width: 100%;
+    height: 100%;
+} */
+
+        /* body{
+    font-family: sans-serif;
+    font-size: 18px;
+    background: #222;
+} */
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px;
+            text-align: center;
+        }
+
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: normal;
+            font-size: 120%;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .filter-menu {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu li {
+            border-radius: 15px;
+            display: inline-block;
+            padding: 10px 18px;
+            background: rgb(243, 243, 243);
+            color: rgb(243, 156, 26);
+            border: 2px solid;
+            border-color: rgb(243, 156, 26);
+            cursor: pointer;
+        }
+
+        .filter-menu li:hover,
+        .filter-menu li.current {
+            background: hsl(39, 91%, 61%);
+            color: hsl(0, 0%, 100%)
+        }
+
+
+
+
+
+        .filter-item li {
+            width: 50%;
+            padding: 2px;
+            float: left;
+        }
+
+        .filter-item li.active {
+            width: 50%;
+            padding: 2px;
+            transition: all 0.5s ease;
+        }
+
+        .filter-item li.delete {
+            width: 0%;
+            padding: 0;
+            transition: all 0.5s ease;
+        }
+
+        .filter-item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (min-width: 768px) {
+
+            .filter-item li.active,
+            .filter-item li {
+                width: 33.33%;
+            }
+
+            h2 {
+                font-size: 190%;
+            }
+        }
+
+        @media screen and (min-width: 1280px) {
+
+            .filter-item li.active,
+            .filter-item li {
+                width: 25%;
+            }
+
+            h2 {
+                font-size: 270%;
+            }
+        }
+
+
+
+        .filter-menu li {
+            margin: 0.3rem;
+        }
+
+        /* ========== */
+        .filter-menu1 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu1 li {
+            border-radius: 15px;
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: rgba(243, 156, 26, 0.856);
+            color: #fff;
+            border: 2px solid;
+            /* border-color: rgb(243, 156, 26); */
+            cursor: pointer;
+        }
+
+        .filter-menu1 li:hover,
+        .filter-menu1 li.current1 {
+            background: rgb(243, 156, 26);
+            color: #FFF;
+            border: 2px solid;
+            transition: 0.2s;
+            border-color: rgb(243, 156, 26);
+        }
+
+        .filter-menu1 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* ========================= */
+        .filter-menu2 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu2 li {
+            border-radius: 15px;
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: rgba(243, 156, 26, 0.856);
+            color: #fff;
+            border: 2px solid;
+            cursor: pointer;
+        }
+
+        .filter-menu2 li:hover,
+        .filter-menu2 li.current2 {
+            background: rgb(243, 156, 26);
+            color: #FFF;
+            border: 2px solid;
+            transition: 0.2s;
+            border-color: rgb(243, 156, 26);
+        }
+
+        .filter-menu2 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        /* ================================ */
+        .filter-menu3 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu3 li {
+            border-radius: 15px;
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: rgba(243, 156, 26, 0.856);
+            color: #fff;
+            border: 2px solid;
+            cursor: pointer;
+        }
+
+        .filter-menu3 li:hover,
+        .filter-menu3 li.current3 {
+            background: rgb(243, 156, 26);
+            color: #FFF;
+            border: 2px solid;
+            transition: 0.2s;
+            border-color: rgb(243, 156, 26);
+        }
+
+        .filter-menu3 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        /* ================================== */
+        .filter-menu4 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu4 li {
+            border-radius: 15px;
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: rgba(243, 156, 26, 0.856);
+            color: #fff;
+            border: 2px solid;
+            cursor: pointer;
+        }
+
+        .filter-menu4 li:hover,
+        .filter-menu4 li.current4 {
+            background: rgb(243, 156, 26);
+            color: #FFF;
+            border: 2px solid;
+            transition: 0.2s;
+            border-color: rgb(243, 156, 26);
+        }
+
+        .filter-menu4 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        /* ============================== */
+        .filter-menu5 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu5 li {
+            border-radius: 15px;
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: rgba(243, 156, 26, 0.856);
+            color: #fff;
+            border: 2px solid;
+            cursor: pointer;
+        }
+
+        .filter-menu5 li:hover,
+        .filter-menu5 li.current5 {
+            background: rgb(243, 156, 26);
+            color: #FFF;
+            border: 2px solid;
+            transition: 0.2s;
+            border-color: rgb(243, 156, 26);
+        }
+
+        .filter-menu5 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        /* ======================= */
+        .filter-menu6 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu6 li {
+            border-radius: 15px;
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: rgba(243, 156, 26, 0.856);
+            color: #fff;
+            border: 2px solid;
+            cursor: pointer;
+        }
+
+        .filter-menu6 li:hover,
+        .filter-menu6 li.current6 {
+            background: rgb(243, 156, 26);
+            color: #FFF;
+            border: 2px solid;
+            transition: 0.2s;
+            border-color: rgb(243, 156, 26);
+        }
+
+        .filter-menu6 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        .responsive {
+            display: flex;
+            width: 94vw;
+            overflow-x: auto;
+        }
+
+
+
+        .scroller {
+            height: 70vh;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+        /* width */
+        .scroller::-webkit-scrollbar {
+            width: 11px;
+        }
+
+        /* Track */
+        /* */
+
+        /* Handle */
+        .scroller::-webkit-scrollbar-thumb {
+            background: rgb(235, 152, 0);
+            border-radius: 3px;
+            transition: 0.5s;
+
+        }
+
+        /* Handle on hover */
+        .scroller::-webkit-scrollbar-thumb:hover {
+            background: hsl(39, 100%, 55%);
+        }
+
+
+
+        /* ======================= */
+
+
+        @media only screen and (max-width:799px) {
+            .filter-menu {
+                display: flex;
+                width: 94vw;
+                overflow-x: scroll;
+            }
+
+
+        }
+
+        @media only screen and (min-width:768px) {
+            .filter-menu {
+                display: block;
+                width: auto;
+                /* overflow-x: hidden; */
+            }
+        }
+
+        /* ====================GALlERY CSS======================  */
+
+
+
+        section#testimonials {
+            padding: 4%;
+        }
+
+        section#aboutUs {
+            background: url('/IllustratorWebsite/Illus-bg.jpg') no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 4%;
+        }
+
+        .about-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title-about {
+            /* background: linear-gradient(3deg, transparent, rgba(0, 0, 0, 0.349), transparent); */
+            /* height: 20vh; */
+        }
+
+        .title-about h2 {
+            font-weight: 500;
+            margin-right: 0.157rem;
+            margin-bottom: 0;
+            padding: 2vh;
+            /* background: rgba(240, 162, 44, 0.389); */
+            font-size: 3rem;
+            /* color: rgb(240, 161, 44); */
+            color: rgba(240, 162, 44, 0.8);
+
+        }
+
+        .title h2 {
+            font-size: 3rem;
+            font-weight: 500;
+            /* color: rgb(240, 161, 44); */
+            color: rgba(240, 162, 44, 0.9);
+            /* font-weight: 900; */
+        }
+
+
+        .para {
+            border-radius: 10px;
+            background-color: rgba(185, 185, 185, 0.493);
+        }
+
+        .para h3 {
+            font-weight: 400;
+            font-size: 1.3em;
+            padding: 15px;
+        }
+
+        .test-fo-size {
+            font-size: 1.2rem;
+        }
+
+        .card-text:last-child {
+            line-height: 2.3;
+        }
+
+        /* contact us */
+        section#contact {
+            height: 200px;
+        }
+
+        .cont-txt-rt h5 {
+            text-align: right;
+        }
+
+
+        div.cont-txt-rt a {
+            /* color: var(--yellow); */
+            color: #2e2d2d;
+            text-decoration: none;
+        }
+
+        div.cont-txt-lt a {
+            /* color: var(--yellow); */
+            color: #2e2d2d;
+            text-decoration: none;
+        }
+
+        .fa-link {
+            display: none;
+
+        }
+
+        .cont-txt-rt:hover .fa-link {
+            display: inline-block;
+            color: #a5a5a5;
+            transition: all 0.5s;
+        }
+
+        .cont-txt-lt:hover .fa-link {
+            display: inline-block;
+            color: #a5a5a5;
+            transition: all 0.5s;
+        }
+
+        .cont-txt-lt h5 {
+            text-align: left;
+        }
+
+        @media only screen and (max-width:799px) {
+            .cont-txt-rt h5 {
+                text-align: center;
+            }
+
+            .cont-txt-lt h5 {
+                text-align: center;
+            }
+
+            .cont-line {
+                display: none;
+            }
+
+            .cont-line1 {
+                display: none;
+            }
+        }
+
+
+        /* contact us */
+
+        /* footer css */
+        footer {
+            background-color: var(--yellow);
+
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .fa .fa-linkedin {
+            margin-right: 0;
+        }
+
+        .fa .fa-whatsapp {
+            margin-left: 0;
+        }
+
+        i.footer {
+            margin: 0 20px;
+            transform: translateY(-17px);
+            font-size: 30px;
+        }
+
+        /* footer css */
+    </style>
+</head>
+
+<body>
+    <section class="bg">
+        <div class="all">
+            <div style="height: 439px;">
+                <div class="rect">
+
+                </div>
+                <!-- <p
+                    style="color: white; font-size: 20px ;position: absolute; transform: translate(18px,-227px); text-align: center; font-weight: bold;">
+                </p> -->
+
+                <div class="tri-lt">
+
+                </div>
+
+                <div class="tri-rt">
+
+                </div>
+
+                <div class="img_center">
+                    <div>
+                        <img src="bgimg1-removebg-preview.png">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="text-center">
+            <div>
+                <h3 class="name_txt"> Mr. Kalakari <br />
+                    <span>(Visualiser + Illustrator)</span>
+                </h3>
+            </div>
+        </div>
+
+        <a href="#aboutUs">
+            <div class="mouse">
+                <div class="mouse-icon">
+
+                    <span class="mouse-wheel"></span>
+                </div>
+
+            </div>
+        </a>
+
+    </section>
+
+    <section id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+                    <button class="btn rdownload my-2 my-sm-0" type="submit">Resume Download</button>
+                </form>
+            </div>
+        </nav>
+    </section>
+    <main class="content">
+        <!-- ============GALLERY========== -->
+
+        <section id="gallery">
+
+            <div class="container">
+                <div class="title">
+                    <h2 class="text-center">Work</h2>
+                    <hr class="w-25 mx-auto">
+                </div>
+
+                <ul class="filter-menu">
+                    <li data-target="all" onclick="hide()">All</li>
+                    <li data-target="kid" onclick="showIll()">Illustration</li>
+                    <li data-target="male" onclick="showLogo()">Logo&nbsp;Folio</li>
+                    <li data-target="female" onclick="showBrand()">Branding</li>
+                    <li data-target="kid" onclick="showDigi()">Digital</li>
+                    <li data-target="male" onclick="showPrint()">Print</li>
+                    <li data-target="female" onclick="showVideo()">Video</li>
+                </ul>
+                <ul class="filter-menu1">
+                    <li data-target="male1">Illustration&nbsp;1</li>
+                    <li data-target="male1">Logo&nbsp;Folio&nbsp;1</li>
+                    <li data-target="female1">Branding&nbsp;1</li>
+                    <li data-target="kid1">Digital&nbsp;1</li>
+                    <li data-target="male1">Print&nbsp;1</li>
+                    <li data-target="kid1">Video&nbsp;1</li>
+                </ul>
+                <ul class="filter-menu2">
+                    <li data-target="male2">Illustration&nbsp;2</li>
+                    <li data-target="male2">Logo&nbsp;Folio&nbsp;2</li>
+                    <li data-target="female2">Branding&nbsp;2</li>
+                    <li data-target="kid2">Digital&nbsp;2</li>
+                    <li data-target="male2">Print&nbsp;2</li>
+                    <li data-target="kid2">Video&nbsp;2</li>
+                </ul>
+                <ul class="filter-menu3">
+                    <li data-target="male3">Illustration&nbsp;3</li>
+                    <li data-target="male3">Logo&nbsp;Folio&nbsp;3</li>
+                    <li data-target="female3">Branding&nbsp;3</li>
+                    <li data-target="kid3">Digital&nbsp;3</li>
+                    <li data-target="male3">Print&nbsp;3</li>
+                    <li data-target="kid3">Video&nbsp;3</li>
+                </ul>
+                <ul class="filter-menu4">
+                    <li data-target="male4">Illustration&nbsp;4</li>
+                    <li data-target="male4">Logo&nbsp;Folio&nbsp;4</li>
+                    <li data-target="female4">Branding&nbsp;4</li>
+                    <li data-target="kid4">Digital&nbsp;4</li>
+                    <li data-target="male4">Print&nbsp;4</li>
+                    <li data-target="kid4">Video&nbsp;4</li>
+                </ul>
+                <ul class="filter-menu5">
+                    <li data-target="male5">Illustration&nbsp;5</li>
+                    <li data-target="male5">Logo&nbsp;Folio&nbsp;5</li>
+                    <li data-target="female5">Branding&nbsp;5</li>
+                    <li data-target="kid5">Digital&nbsp;5</li>
+                    <li data-target="male5">Print&nbsp;5</li>
+                    <li data-target="kid5">Video&nbsp;5</li>
+                </ul>
+                <ul class="filter-menu6">
+                    <li data-target="male6">Illustration&nbsp;6</li>
+                    <li data-target="male6">Logo&nbsp;Folio&nbsp;6</li>
+                    <li data-target="female6">Branding&nbsp;6</li>
+                    <li data-target="kid6">Digital&nbsp;6</li>
+                    <li data-target="male6">Print&nbsp;6</li>
+                    <li data-target="kid6">Video&nbsp;6</li>
+                </ul>
+
+
+                <div class="scroller">
+                    <ul
+                        class="filter-item filter-item1 filter-item2 filter-item3 filter-item4 filter-item5 filter-item6">
+                        <li data-item="male"><img src="images/male1.jpg" alt=""></li>
+                        <li data-item="male"><img src="images/male2.jpg" alt=""></li>
+                        <li data-item="female"><img src="images/female1.jpg" alt=""></li>
+                        <li data-item="female"><img src="images/female2.jpg" alt=""></li>
+                        <li data-item="kid"><img src="images/kid1.jpg" alt=""></li>
+                        <li data-item="kid"><img src="images/kid2.jpg" alt=""></li>
+                        <li data-item="female"><img src="images/female3.jpg" alt=""></li>
+                        <li data-item="female"><img src="images/female4.jpg" alt=""></li>
+                        <li data-item="female"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female"><img src="images/female4.jpg" alt=""></li>
+                        <li data-item="female"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male"><img src="images/male3.jpg" alt=""></li>
+
+
+                        <li data-item="male1"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid1"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid1"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female1"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male1"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male1"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid1"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid1"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female1"><img src="images/female4.jpg" alt=""></li>
+                        <li data-item="female1"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male1"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male1"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid1"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid1"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="kid1"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid1"><img src="images/kid4.jpg" alt=""></li>
+
+                        <li data-item="female2"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male2"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male2"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid2"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid2"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female2"><img src="images/female4.jpg" alt=""></li>
+                        <li data-item="female2"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male2"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male2"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid2"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid2"><img src="images/kid4.jpg" alt=""></li>
+
+                        <li data-item="kid3"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="kid3"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid3"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female3"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male3"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male3"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid3"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid3"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female3"><img src="images/female4.jpg" alt=""></li>
+                        <li data-item="female3"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male3"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male3"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid3"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid3"><img src="images/kid4.jpg" alt=""></li>
+
+                        <li data-item="kid4"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="kid4"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid4"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female4"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male4"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male4"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid4"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid4"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female4"><img src="images/female4.jpg" alt=""></li>
+                        <li data-item="female4"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male4"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male4"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid4"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid4"><img src="images/kid4.jpg" alt=""></li>
+
+                        <li data-item="kid5"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="kid5"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid5"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female5"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male5"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male5"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid5"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid5"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female5"><img src="images/female4.jpg" alt=""></li>
+                        <li data-item="female5"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male5"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male5"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid5"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid5"><img src="images/kid4.jpg" alt=""></li>
+
+
+                        <li data-item="kid6"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="kid6"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid6"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female6"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male6"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male6"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid6"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid6"><img src="images/kid4.jpg" alt=""></li>
+                        <li data-item="female6"><img src="images/female4.jpg" alt=""></li>
+                        <li data-item="female6"><img src="images/female5.jpg" alt=""></li>
+                        <li data-item="male6"><img src="images/male3.jpg" alt=""></li>
+                        <li data-item="male6"><img src="images/male4.jpg" alt=""></li>
+                        <li data-item="kid6"><img src="images/kid3.jpg" alt=""></li>
+                        <li data-item="kid6"><img src="images/kid4.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ============GALLERY============= -->
+
+
+        <section id="aboutUs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 about-title p-5">
+                        <div class="title-about">
+                            <h2>About Us <span class="line"></span></h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 p-5">
+                        <div class="para">
+                            <h3>
+                                <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+                                    itaque
+                                    pariatur, repudiandae
+                                    sit porro temporibus veritatis cupiditate. Nemo sint, porro quo voluptates alias
+                                    tempore, vero facilis quasi perspiciatis expedita deleniti. Lorem, ipsum dolor sit
+                                    amet
+                                    consectetur adipisicing elit. Minus laudantium nulla, commodi dolor ratione quam
+                                    temporibus. Est in sit deserunt. Quos reiciendis explicabo expedita, rem ipsam modi.
+                                    Labore, est quasi!</p>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="title">
+                <h2 class="text-center">Testimonials</h2>
+                <hr class="w-25 mx-auto">
+            </div>
+            <div class="card-group">
+                <div class="card m-3" style="border: 1px solid #9b9b9b93; border-radius: 10px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text"><i class="fa fa-quote-left"
+                                style="color: yellow; font-size: 1.8em; padding: 5px;"></i>Lorem ipsum dolor sit amet,
+                            consectetuer adipiscing elit, sed
+                            diam nonummy nibh euismod
+                            tincidunt ut laoreet dolore magna
+                            aliquam erat volutpat. Ut wisi enim
+                            ad minim veniam, quis nostrud
+                            exerci tation ullamcorper suscipit
+                            lobortis nisl ut aliquip ex ea
+                            commodo consequat. <i class="fa fa-quote-right" style="color: yellow; font-size: 1.8em; padding: 5px;
+                        "></i></p>
+                    </div>
+                    <div class="card-footer"
+                        style="background-color: border-bottom-left-radius: inherit; border-bottom-right-radius: inherit;">
+                        <img class="card-img-top w-50 test-img" src="/IllustratorWebsite/test1-removebg-preview.webp"
+                            style="float: left;" alt="Card image cap">
+                        <p class="test-fo-size">Name of person</p>
+                        <p class="text-muted">Something else</p>
+
+                    </div>
+                </div>
+                <div class="card m-3" style="border: 1px solid #9b9b9b93; border-radius: 10px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text"><i class="fa fa-quote-left"
+                                style="color: yellow; font-size: 1.8em; padding: 5px;"></i>Lorem ipsum dolor sit amet,
+                            consectetuer adipiscing elit, sed
+                            diam nonummy nibh euismod
+                            tincidunt ut laoreet dolore magna
+                            aliquam erat volutpat. Ut wisi enim
+                            ad minim veniam, quis nostrud
+                            exerci tation ullamcorper suscipit
+                            lobortis nisl ut aliquip ex ea
+                            commodo consequat.<i class="fa fa-quote-right"
+                                style="color: yellow; font-size: 1.8em; padding: 5px;"></i>
+                        </p>
+                    </div>
+                    <div class="card-footer"
+                        style="border-bottom-left-radius: inherit; border-bottom-right-radius: inherit;">
+                        <img class="card-img-top w-50 test-img" src="/IllustratorWebsite/test1-removebg-preview.webp"
+                            style="float: left;" alt="Card image cap">
+                        <p class="test-fo-size">Name of person</p>
+                        <p class="text-muted">Something else</p>
+                    </div>
+                </div>
+                <div class="card m-3" style="border: 1px solid #9b9b9b93; border-radius: 10px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text"><i class="fa fa-quote-left"
+                                style="color: yellow; font-size: 1.8em; padding: 5px;"></i>Lorem ipsum dolor sit amet,
+                            consectetuer adipiscing elit, sed
+                            diam nonummy nibh euismod
+                            tincidunt ut laoreet dolore magna
+                            aliquam erat volutpat. Ut wisi enim
+                            ad minim veniam, quis nostrud
+                            exerci tation ullamcorper suscipit
+                            lobortis nisl ut aliquip ex ea
+                            commodo consequat.<i class="fa fa-quote-right"
+                                style="color: yellow; font-size: 1.8em; padding: 5px;"></i></p>
+                    </div>
+                    <div class="card-footer"
+                        style="border-bottom-left-radius: inherit; border-bottom-right-radius: inherit;">
+                        <img class="card-img-top w-50 test-img" src="/IllustratorWebsite/test1-removebg-preview.webp"
+                            style="float: left;" alt="Card image cap">
+                        <p class="test-fo-size">Name of person</p>
+                        <p class="text-muted">Something else</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="title">
+                <h2 class="text-center">Contact Us</h2>
+                <hr class="w-25 mx-auto">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 cont-txt-rt">
+                        <h5><a href="www.google.com" style="font-weight: 400;"><i class="fa fa-link"></i>
+                                ganesh789raut@gmail.com</a></h5>
+                    </div>
+                    <div class="col-lg-4 cont-line" style=" text-align: center;">
+                        <span style="background-color: rgba(0, 0, 0, 0.185); width: 3px; height: 20px;">&nbsp;</span>
+                    </div>
+                    <div class="col-lg-4 cont-txt-lt">
+                        <h5><a href="www.google.com" style="font-weight: 400;">link02v16vficba <i
+                                    class="fa fa-link"></i></a></h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-icons">
+                <i class="fa fa-instagram footer"></i>
+                <i class="fa fa-facebook footer"></i>
+                <i class="fa fa-whatsapp footer"></i>
+                <i class="fa fa-behance footer"></i>
+                <i class="fa fa-youtube footer"></i>
+                <i class="fa fa-linkedin footer"></i>
+            </div>
+            <br><br>
+            <p class="text-center">All Rights Reserved &copy; 2021 | Design with <i class="fa fa-heart"
+                    style="color: red;"></i> by <a href="www.google.com"
+                    style="text-decoration: underline; color: inherit;">Team Avadik</a></p>
+            <br>
+        </footer>
+    </main>
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+
+
+    <!-- ==================GALLERY FIRST JAVASCRIPT===================== -->
+    <script>
+        function showIll() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "block"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+        function showLogo() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "block"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+        function showBrand() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "block"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+        function showDigi() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "block"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+        function showPrint() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "block"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+        function showVideo() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+
+
+            function myFunction(j) {
+                if (j.matches) { // If media query matches
+                    var e = document.querySelector(".filter-menu6");
+                    e.classList.add("responsive")
+                    e.classList.add("filter-menu6")
+                } else {
+                    var e = document.querySelector(".filter-menu6");
+                    e.style.display = "block"
+                    e.style.width = "inherit";
+
+
+                }
+            }
+
+            var j = window.matchMedia("(max-width: 768px)")
+            myFunction(j) // Call listener function at run time
+            j.addListener(myFunction) // Attach listener function on state changes
+        }
+        function hide() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+    </script>
+    <!-- ==================GALLERY FIRST JAVASCRIPT===================== -->
+
+    <!-- ==================GALLERY SECOND JAVASCRIPT=============== -->
+    <script>
+        let sortBtn = document.querySelector('.filter-menu').children;
+        let sortItem = document.querySelector('.filter-item').children;
+        for (let i = 0; i < sortBtn.length; i++) {
+            sortBtn[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn.length; j++) {
+                    sortBtn[j].classList.remove('current');
+                }
+
+                this.classList.add('current');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem.length; k++) {
+                    sortItem[k].classList.remove('active');
+                    sortItem[k].classList.add('delete');
+
+                    if (sortItem[k].getAttribute('data-item') == targetData || targetData == "all") {
+                        sortItem[k].classList.remove('delete');
+                        sortItem[k].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // =======================================
+
+        let sortBtn1 = document.querySelector('.filter-menu1').children;
+        let sortItem1 = document.querySelector('.filter-item1').children;
+
+
+        for (let i = 0; i < sortBtn1.length; i++) {
+            sortBtn1[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn1.length; j++) {
+                    sortBtn1[j].classList.remove('current1');
+                }
+
+                this.classList.add('current1');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem1.length; k++) {
+                    sortItem1[k].classList.remove('active');
+                    sortItem1[k].classList.add('delete');
+
+                    if (sortItem1[k].getAttribute('data-item') == targetData) {
+                        sortItem1[k].classList.remove('delete');
+                        sortItem1[k].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // =====================================================
+
+        let sortBtn2 = document.querySelector('.filter-menu2').children;
+        let sortItem2 = document.querySelector('.filter-item2').children;
+
+
+        for (let i = 0; i < sortBtn2.length; i++) {
+            sortBtn2[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn2.length; j++) {
+                    sortBtn2[j].classList.remove('current2');
+                }
+
+                this.classList.add('current2');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem2.length; k++) {
+                    sortItem2[k].classList.remove('active');
+                    sortItem2[k].classList.add('delete');
+
+                    if (sortItem2[k].getAttribute('data-item') == targetData) {
+                        sortItem2[k].classList.remove('delete');
+                        sortItem2[k].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // =================================================================
+
+        let sortBtn3 = document.querySelector('.filter-menu3').children;
+        let sortItem3 = document.querySelector('.filter-item3').children;
+
+
+        for (let i = 0; i < sortBtn3.length; i++) {
+            sortBtn3[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn3.length; j++) {
+                    sortBtn3[j].classList.remove('current3');
+                }
+
+                this.classList.add('current2');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem3.length; k++) {
+                    sortItem3[k].classList.remove('active');
+                    sortItem3[k].classList.add('delete');
+
+                    if (sortItem3[k].getAttribute('data-item') == targetData) {
+                        sortItem3[k].classList.remove('delete');
+                        sortItem3[k].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // ==========================================================
+
+        let sortBtn4 = document.querySelector('.filter-menu4').children;
+        let sortItem4 = document.querySelector('.filter-item4').children;
+
+
+        for (let i = 0; i < sortBtn4.length; i++) {
+            sortBtn4[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn4.length; j++) {
+                    sortBtn4[j].classList.remove('current4');
+                }
+
+                this.classList.add('current4');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem4.length; k++) {
+                    sortItem4[k].classList.remove('active');
+                    sortItem4[k].classList.add('delete');
+
+                    if (sortItem4[k].getAttribute('data-item') == targetData) {
+                        sortItem4[k].classList.remove('delete');
+                        sortItem4[k].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // ================================================
+
+
+        let sortBtn5 = document.querySelector('.filter-menu5').children;
+        let sortItem5 = document.querySelector('.filter-item5').children;
+
+
+        for (let i = 0; i < sortBtn5.length; i++) {
+            sortBtn5[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn5.length; j++) {
+                    sortBtn5[j].classList.remove('current5');
+                }
+
+                this.classList.add('current5');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem5.length; k++) {
+                    sortItem5[k].classList.remove('active');
+                    sortItem5[k].classList.add('delete');
+
+                    if (sortItem5[k].getAttribute('data-item') == targetData) {
+                        sortItem5[k].classList.remove('delete');
+                        sortItem5[k].classList.add('active');
+                    }
+                }
+            });
+        }
+        // =============================================
+
+        let sortBtn6 = document.querySelector('.filter-menu6').children;
+        let sortItem6 = document.querySelector('.filter-item6').children;
+
+
+        for (let i = 0; i < sortBtn6.length; i++) {
+            sortBtn6[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn6.length; j++) {
+                    sortBtn6[j].classList.remove('current6');
+                }
+
+                this.classList.add('current6');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem6.length; k++) {
+                    sortItem6[k].classList.remove('active');
+                    sortItem6[k].classList.add('delete');
+
+                    if (sortItem6[k].getAttribute('data-item') == targetData) {
+                        sortItem6[k].classList.remove('delete');
+                        sortItem6[k].classList.add('active');
+                    }
+                }
+            });
+        }
+    </script>
+    <!-- ==================GALLERY SECOND JAVASCRIPT=============== -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+-->
+</body>
+
+</html>

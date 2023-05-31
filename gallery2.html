@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(196, 196, 196);
+            font-family: sans-serif;
+        }
+
+        .container {
+            max-width: 1170px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        img {
+            max-width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .gallery {
+            width: 100%;
+            display: block;
+            min-height: 100vh;
+            padding: 100px 0;
+        }
+
+        .gallery .gallery-filter {
+            padding: 0 15px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery .gallery-filter .filter-item {
+            color: #353535;
+            font-size: 18px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin: 0 10px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+
+        .gallery .gallery-filter .filter-item.active {
+            color: darkcyan;
+            border-color: darkcyan;
+        }
+
+
+        /* ----------------- */
+        .gallery .gallery-filter1 {
+            padding: 0 15px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery .gallery-filter1 .filter-item1 {
+            color: #353535;
+            font-size: 18px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin: 0 10px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+
+        .gallery .gallery-filter1 .filter-item1.active1 {
+            color: darkcyan;
+            border-color: darkcyan;
+        }
+
+        /* ------------------------ */
+
+
+
+
+
+
+
+
+
+
+        .gallery .gallery-item {
+            width: calc(100%/3);
+            padding: 15px;
+        }
+
+        .gallery .gallery-item-inner img {
+            width: 100%;
+        }
+
+        .gallery .gallery-item.hide {
+            display: none;
+        }
+
+        .gallery .gallery-item.show {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* responsive */
+        @media(max-width: 991px) {
+            .gallery .gallery-item {
+                width: 50%;
+            }
+        }
+
+        @media(max-width:767px) {
+            .gallery .gallery-item {
+                width: 100%;
+            }
+
+            .gallery .gallery-filter .filter-item {
+                margin-bottom: 10px;
+            }
+        }
+
+        .content {
+            height: 500px;
+            overflow: scroll;
+        }
+
+        .content::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .content::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        .content::-webkit-scrollbar-thumb {
+            background: orange;
+            border-radius: 10px;
+        }
+
+        .content::-webkit-scrollbar-thumb:hover {
+            background: orange;
+        }
+    </style>
+    <script>
+        function demoDisplay() {
+            document.getElementById("myP1").style.display = "block";
+            document.getElementById("myP2").style.display = "none";
+            document.getElementById("myP3").style.display = "none";
+            document.getElementById("myP4").style.display = "none";
+        }
+        function demoDisplay2() {
+            document.getElementById("myP2").style.display = "block";
+            document.getElementById("myP1").style.display = "none";
+            document.getElementById("myP3").style.display = "none";
+            document.getElementById("myP4").style.display = "none";
+        }
+
+        function demoDisplay3() {
+            document.getElementById("myP3").style.display = "block";
+            document.getElementById("myP1").style.display = "none";
+            document.getElementById("myP2").style.display = "none";
+            document.getElementById("myP4").style.display = "none"
+        }
+
+        function demoDisplay4() {
+            document.getElementById("myP4").style.display = "block";
+            document.getElementById("myP1").style.display = "none";
+            document.getElementById("myP2").style.display = "none";
+            document.getElementById("myP3").style.display = "none"
+        }
+        function demoDisplayall() {
+            document.getElementById("myP4").style.display = "none";
+            document.getElementById("myP1").style.display = "none";
+            document.getElementById("myP2").style.display = "none";
+            document.getElementById("myP3").style.display = "none"
+        }
+    </script>
+</head>
+
+<body>
+
+    <section class="gallery">
+        <div class="container">
+            <!-- <div class="row">
+                <div class="gallery-filter">
+                    <span class="filter-item active" onclick="demoDisplayall()" data-filter="all">All</span>
+                    <span class="filter-item" onclick="demoDisplay()" data-filter="shoe">Visual Identity</span>
+                    <span class="filter-item" onclick="demoDisplay2()" data-filter="headphone">UI Designs</span>
+                    <span class="filter-item" onclick="demoDisplay3()" data-filter="camera">Advertising & Marketing
+                        Designs</span>
+                    <span class="filter-item" onclick="demoDisplay4()" data-filter="headphone">Product Design</span>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="gallery-filter">
+                    <span class="filter-item active" data-filter="all">All</span>
+                    <span class="filter-item" data-filter="shoe">Shoe</span>
+                    <span class="filter-item" data-filter="headphone">Headphone</span>
+                    <span class="filter-item" data-filter="camera">Camera</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="gallery-filter1">
+                    <span class="filter-item1 active1" data-filter="all1">All</span>
+                    <span class="filter-item1" data-filter="shoe1">Shoe</span>
+                    <span class="filter-item1" data-filter="headphone">Headphone</span>
+                    <span class="filter-item1" data-filter="camera">Camera</span>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="gallery-filter" id="myP2" style="display: none;">
+                    <span class="filter-item active" data-filter="all">2All</span>
+                    <span class="filter-item" data-filter="shoe">Shoe</span>
+                    <span class="filter-item" data-filter="headphone">Headphone</span>
+                    <span class="filter-item" data-filter="camera">Camera</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="gallery-filter" id="myP3" style="display: none;">
+                    <span class="filter-item active" data-filter="all">3All</span>
+                    <span class="filter-item" data-filter="shoe">Shoe</span>
+                    <span class="filter-item" data-filter="headphone">Headphone</span>
+                    <span class="filter-item" data-filter="camera">Camera</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="gallery-filter" id="myP4" style="display: none;">
+                    <span class="filter-item active" data-filter="all">4All</span>
+                    <span class="filter-item" data-filter="shoe">Shoe</span>
+                    <span class="filter-item" data-filter="headphone">Headphone</span>
+                    <span class="filter-item" data-filter="camera">Camera</span>
+                </div>
+            </div> -->
+            <div class="row content">
+                <!-- gallery item start  -->
+                <div class="gallery-item shoe">
+                    <div class="gallery-item-inner">
+                        <img src="img1.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+                <!-- gallery item start  -->
+                <div class="gallery-item headphone">
+                    <div class="gallery-item-inner">
+                        <img src="img2.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+                <!-- gallery item start  -->
+                <div class="gallery-item camera">
+                    <div class="gallery-item-inner">
+                        <img src="img2a.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+                <!-- gallery item start  -->
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <img src="img3.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+                <!-- gallery item start  -->
+                <div class="gallery-item camera">
+                    <div class="gallery-item-inner">
+                        <img src="img1.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+                <!-- gallery item start  -->
+                <div class="gallery-item camera">
+                    <div class="gallery-item-inner">
+                        <img src="img2.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+                <!-- gallery item start  -->
+                <div class="gallery-item headphone">
+                    <div class="gallery-item-inner">
+                        <img src="img3.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+                <!-- gallery item start  -->
+                <div class="gallery-item shoe1 shoe">
+                    <div class="gallery-item-inner">
+                        <img src="img2a.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+                <!-- gallery item start  -->
+                <div class="gallery-item camera">
+                    <div class="gallery-item-inner">
+                        <img src="img3.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+                <!-- gallery item start  -->
+                <div class="gallery-item1 camera">
+                    <div class="gallery-item-inner">
+                        <img src="img1.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+                <!-- gallery item start  -->
+                <div class="gallery-item gallery-item1 headphone">
+                    <div class="gallery-item-inner">
+                        <img src="img2.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+                <!-- gallery item start  -->
+                <div class="gallery-item gallery-item1 shoe">
+                    <div class="gallery-item-inner">
+                        <img src="img3.jpg" alt="img">
+                    </div>
+                </div>
+                <!-- gallery item end  -->
+
+            </div>
+        </div>
+    </section>
+    <script>
+        const filterContainer = document.querySelector(".gallery-filter"),
+            galleryItems = document.querySelectorAll(".gallery-item");
+        // console.log(galleryItems);
+
+        filterContainer.addEventListener("click", (event) => {
+            // console.log(event.target);
+            // if(event.target.classList.contains("filter-item")){
+            //     console.log("true");
+            // }
+            // else{
+            //     console.log("false");
+            // }
+            // console.log(event.target);
+
+            if (event.target.classList.contains("filter-item")) {
+                // deactivate existing active 'filter-item'
+                filterContainer.querySelector(".active").classList.remove("active");
+                // active now 'filter-item'
+                event.target.classList.add("active");
+
+                const filterValue = event.target.getAttribute("data-filter");
+                // console.log(filterValue);
+                galleryItems.forEach((item) => {
+                    // console.log(item);
+                    if (item.classList.contains(filterValue) || filterValue === 'all') {
+                        item.classList.remove("hide");
+                        item.classList.add("show");
+                    }
+                    else {
+                        item.classList.remove("show");
+                        item.classList.add("hide");
+                    }
+                });
+            }
+        });
+
+    </script>
+
+
+
+    <script>
+        const filterContainer = document.querySelector(".gallery-filter1"),
+            galleryItems = document.querySelectorAll(".gallery-item1");
+        // console.log(galleryItems);
+
+        filterContainer.addEventListener("click", (event) => {
+            // console.log(event.target);
+            // if(event.target.classList.contains("filter-item")){
+            //     console.log("true");
+            // }
+            // else{
+            //     console.log("false");
+            // }
+            // console.log(event.target);
+
+            if (event.target.classList.contains("filter-item1")) {
+                // deactivate existing active 'filter-item'
+                filterContainer.querySelector(".active1").classList.remove("active1");
+                // active now 'filter-item'
+                event.target.classList.add("active1");
+
+                const filterValue = event.target.getAttribute("data-filter");
+                // console.log(filterValue);
+                galleryItems.forEach((item) => {
+                    // console.log(item);
+                    if (item.classList.contains(filterValue) || filterValue === 'all1') {
+                        item.classList.remove("hide");
+                        item.classList.add("show");
+                    }
+                    else {
+                        item.classList.remove("show");
+                        item.classList.add("hide");
+                    }
+                });
+            }
+        });
+
+    </script>
+
+
+</body>
+
+</html>

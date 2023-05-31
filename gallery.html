@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.gallery-title
+{
+    font-size: 36px;
+    color: #42B32F;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 7.5%;
+    left: 46.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e;
+}
+.filter-button
+{
+    font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #42B32F;
+    margin-bottom: 30px;
+
+}
+.filter-button:hover
+{
+    /* font-size: 18px; */
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #42B32F;
+
+}
+
+.filter-button:focus{
+    border: 1px solid #42B32F;
+}
+
+.btn-default:active .filter-button:active
+{
+    background-color: #42B32F;
+    color: white;
+}
+
+.port-image
+{
+    width: 100%;
+}
+
+.gallery_product
+{
+    margin-bottom: 30px;
+}
+section{
+    height: 400px;
+    overflow: scroll;
+}
+
+section::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+section::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+section::-webkit-scrollbar-thumb {
+  background: orange; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+section::-webkit-scrollbar-thumb:hover {
+  background: orange;
+}
+
+    </style>
+
+<script>
+    function demoDisplay() {
+      document.getElementById("myP1").style.display = "block";
+      document.getElementById("myP2").style.display = "none";
+      document.getElementById("myP3").style.display = "none";
+      document.getElementById("myP4").style.display = "none";
+    }
+
+    function demoDisplay2() {
+      document.getElementById("myP2").style.display = "block";
+      document.getElementById("myP1").style.display = "none";
+      document.getElementById("myP3").style.display = "none";
+      document.getElementById("myP4").style.display = "none";
+    }
+
+    function demoDisplay3() {
+      document.getElementById("myP3").style.display = "block";
+      document.getElementById("myP1").style.display = "none";
+      document.getElementById("myP2").style.display = "none";
+      document.getElementById("myP4").style.display = "none"
+    }
+
+    function demoDisplay4() {
+      document.getElementById("myP4").style.display = "block";
+      document.getElementById("myP1").style.display = "none";
+      document.getElementById("myP2").style.display = "none";
+      document.getElementById("myP3").style.display = "none"
+    }
+    
+    </script>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!------ Include the above in your HEAD tag ---------->
+ <div class="container">
+        <div class="row">
+        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="gallery-title">Gallery</h1>
+        </div>
+
+        <div align="center">
+            <button style="display: inline;" class="btn btn-default filter-button" data-filter="all">All</button>
+            <button style="display: inline;" class="btn btn-default filter-button" onclick="demoDisplay4()" data-filter="hdpe">Visual Identity</button>
+            <button style="display: inline;" class="btn btn-default filter-button" onclick="demoDisplay3()" data-filter="sprinkle">UI Designs</button>
+            <button style="display: inline;" class="btn btn-default filter-button" onclick="demoDisplay2()" data-filter="spray">Advertising & Marketing Designs</button>
+            <button style="display: inline;" class="btn btn-default filter-button" onclick="demoDisplay()" data-filter="irrigation">Product Design</button>
+        </div>
+        <br/>
+        <div align="center" id="myP1" style="display: none;">
+            <button class="btn btn-default filter-button hdpe" data-filter="envi">Interaction or UX Designers </button>
+            <button class="btn btn-default filter-button hdpe" data-filter="car">User Researchers</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="bikes">Data Analysts</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="fruit">Business Strategists</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="Pollution">Prototypers</button>
+        </div>
+        <!-- <br/> -->
+        <div align="center" id="myP2" style="display: none;">
+            <button class="btn btn-default filter-button hdpe" data-filter="envi">Environment2</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="car">Cartoon2</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="bikes">Bikes</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="fruit">Fruit</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="Pollution">Pollution</button>
+        </div>
+
+        <div align="center" id="myP3" style="display: none;">
+            <button class="btn btn-default filter-button hdpe" data-filter="envi">Environment3</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="car">Cartoon3</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="bikes">Bikes3</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="fruit">Fruit</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="Pollution">Pollution</button>
+        </div>
+
+        <div align="center" id="myP4" style="display: none;">
+            <button class="btn btn-default filter-button hdpe" data-filter="envi">Environment4</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="car">Cartoon4</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="bikes">Bikes</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="fruit">Fruit</button>
+            <button class="btn btn-default filter-button hdpe" data-filter="Pollution">Pollution</button>
+        </div>
+        <br/>
+        <section>
+
+<!-- <div class="scroll1"> -->
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation bikes">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter envi">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter fruit">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter fruit">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter car">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Pollution">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                <img src="/IllustratorWebsite/img3.jpg" class="img-responsive">
+            </div>
+        <!-- </div> -->
+        </div>
+    </div>
+</section>
+
+<script>
+    $(document).ready(function(){
+
+$(".filter-button").click(function(){
+    var value = $(this).attr('data-filter');
+    
+    if(value == "all")
+    {
+        //$('.filter').removeClass('hidden');
+        $('.filter').show('1000');
+    }
+    else
+    {
+//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+        $(".filter").not('.'+value).hide('3000');
+        $('.filter').filter('.'+value).show('3000');
+        
+    }
+});
+
+if ($(".filter-button").removeClass("active")) {
+$(this).removeClass("active");
+}
+$(this).addClass("active");
+
+});
+</script>
+</body>
+</html>

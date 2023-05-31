@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter images Gallery Using CSS JS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .filter-menu li {
+            margin: 0.3rem;
+        }
+
+        /* ========== */
+        .filter-menu1 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu1 li {
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: #eb4d4b;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .filter-menu1 li:hover,
+        .filter-menu1 li.current1 {
+            background: #ff7979;
+        }
+
+        .filter-menu1 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* ========================= */
+        .filter-menu2 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu2 li {
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: #eb4d4b;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .filter-menu2 li:hover,
+        .filter-menu2 li.current2 {
+            background: #ff7979;
+        }
+
+        .filter-menu2 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        /* ================================ */
+        .filter-menu3 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu3 li {
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: #eb4d4b;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .filter-menu3 li:hover,
+        .filter-menu3 li.current3 {
+            background: #ff7979;
+        }
+
+        .filter-menu3 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        /* ================================== */
+        .filter-menu4 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu4 li {
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: #eb4d4b;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .filter-menu4 li:hover,
+        .filter-menu4 li.current4 {
+            background: #ff7979;
+        }
+
+        .filter-menu4 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        /* ============================== */
+        .filter-menu5 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu5 li {
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: #eb4d4b;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .filter-menu5 li:hover,
+        .filter-menu5 li.current5 {
+            background: #ff7979;
+        }
+
+        .filter-menu5 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        /* ======================= */
+        .filter-menu6 {
+            margin-bottom: 20px;
+        }
+
+        .filter-menu6 li {
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 10px 18px;
+            background: #eb4d4b;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .filter-menu6 li:hover,
+        .filter-menu6 li.current6 {
+            background: #ff7979;
+        }
+
+        .filter-menu6 {
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        .responsive {
+            display: flex;
+            width: 94vw;
+            overflow-x: auto;
+        }
+
+
+
+        .scroller {
+            height: 70vh;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+        /* width */
+        .scroller::-webkit-scrollbar {
+            width: 11px;
+        }
+
+        /* Track */
+        /* */
+
+        /* Handle */
+        .scroller::-webkit-scrollbar-thumb {
+            background: rgb(235, 152, 0);
+            border-radius: 3px;
+            transition: 0.5s;
+
+        }
+
+        /* Handle on hover */
+        .scroller::-webkit-scrollbar-thumb:hover {
+            background: hsl(39, 100%, 55%);
+        }
+
+
+
+    /* ======================= */
+
+
+    @media only screen and (max-width:799px) {
+    .filter-menu {
+    display: flex;
+    width: 94vw;
+    overflow-x: scroll;
+    }
+
+
+    }
+
+    @media only screen and (min-width:768px) {
+    .filter-menu {
+    display: block;
+    width: auto;
+    /* overflow-x: hidden; */
+    }
+    }
+    </style>
+    <script>
+        function showIll() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "block"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+        function showLogo() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "block"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+        function showBrand() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "block"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+        function showDigi() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "block"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+        function showPrint() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "block"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+        function showVideo() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+
+
+            function myFunction(j) {
+                if (j.matches) { // If media query matches
+                    var e = document.querySelector(".filter-menu6");
+                    e.classList.add("responsive")
+                    e.classList.add("filter-menu6")
+                } else {
+                    var e = document.querySelector(".filter-menu6");
+                    e.style.display = "block"
+                    e.style.width = "inherit";
+
+
+                }
+            }
+
+            var j = window.matchMedia("(max-width: 768px)")
+            myFunction(j) // Call listener function at run time
+            j.addListener(myFunction) // Attach listener function on state changes
+        }
+        function hide() {
+            var x = document.querySelector(".filter-menu1");
+            x.style.display = "none"
+            var a = document.querySelector(".filter-menu2");
+            a.style.display = "none"
+            var b = document.querySelector(".filter-menu3");
+            b.style.display = "none"
+            var c = document.querySelector(".filter-menu4");
+            c.style.display = "none"
+            var d = document.querySelector(".filter-menu5");
+            d.style.display = "none"
+            var e = document.querySelector(".filter-menu6");
+            e.style.display = "none"
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Filter images Gallery Using CSS JS</h2>
+
+        <ul class="filter-menu">
+            <li data-target="all" onclick="hide()">All</li>
+            <li data-target="kid" onclick="showIll()">Illustration</li>
+            <li data-target="male" onclick="showLogo()">Logo&nbsp;Folio</li>
+            <li data-target="female" onclick="showBrand()">Branding</li>
+            <li data-target="kid" onclick="showDigi()">Digital</li>
+            <li data-target="male" onclick="showPrint()">Print</li>
+            <li data-target="female" onclick="showVideo()">Video</li>
+        </ul>
+        <ul class="filter-menu1">
+            <li data-target="male1">Illustration&nbsp;1</li>
+            <li data-target="male1">Logo&nbsp;Folio&nbsp;1</li>
+            <li data-target="female1">Branding&nbsp;1</li>
+            <li data-target="kid1">Digital&nbsp;1</li>
+            <li data-target="male1">Print&nbsp;1</li>
+            <li data-target="kid1">Video&nbsp;1</li>
+        </ul>
+        <ul class="filter-menu2">
+            <li data-target="male2">Illustration&nbsp;2</li>
+            <li data-target="male2">Logo&nbsp;Folio&nbsp;2</li>
+            <li data-target="female2">Branding&nbsp;2</li>
+            <li data-target="kid2">Digital&nbsp;2</li>
+            <li data-target="male2">Print&nbsp;2</li>
+            <li data-target="kid2">Video&nbsp;2</li>
+        </ul>
+        <ul class="filter-menu3">
+            <li data-target="male3">Illustration&nbsp;3</li>
+            <li data-target="male3">Logo&nbsp;Folio&nbsp;3</li>
+            <li data-target="female3">Branding&nbsp;3</li>
+            <li data-target="kid3">Digital&nbsp;3</li>
+            <li data-target="male3">Print&nbsp;3</li>
+            <li data-target="kid3">Video&nbsp;3</li>
+        </ul>
+        <ul class="filter-menu4">
+            <li data-target="male4">Illustration&nbsp;4</li>
+            <li data-target="male4">Logo&nbsp;Folio&nbsp;4</li>
+            <li data-target="female4">Branding&nbsp;4</li>
+            <li data-target="kid4">Digital&nbsp;4</li>
+            <li data-target="male4">Print&nbsp;4</li>
+            <li data-target="kid4">Video&nbsp;4</li>
+        </ul>
+        <ul class="filter-menu5">
+            <li data-target="male5">Illustration&nbsp;5</li>
+            <li data-target="male5">Logo&nbsp;Folio&nbsp;5</li>
+            <li data-target="female5">Branding&nbsp;5</li>
+            <li data-target="kid5">Digital&nbsp;5</li>
+            <li data-target="male5">Print&nbsp;5</li>
+            <li data-target="kid5">Video&nbsp;5</li>
+        </ul>
+        <ul class="filter-menu6">
+            <li data-target="male6">Illustration&nbsp;6</li>
+            <li data-target="male6">Logo&nbsp;Folio&nbsp;6</li>
+            <li data-target="female6">Branding&nbsp;6</li>
+            <li data-target="kid6">Digital&nbsp;6</li>
+            <li data-target="male6">Print&nbsp;6</li>
+            <li data-target="kid6">Video&nbsp;6</li>
+        </ul>
+
+
+        <div class="scroller">
+            <ul class="filter-item filter-item1 filter-item2 filter-item3 filter-item4 filter-item5 filter-item6">
+                <li data-item="male"><img src="images/male1.jpg" alt=""></li>
+                <li data-item="male"><img src="images/male2.jpg" alt=""></li>
+                <li data-item="female"><img src="images/female1.jpg" alt=""></li>
+                <li data-item="female"><img src="images/female2.jpg" alt=""></li>
+                <li data-item="kid"><img src="images/kid1.jpg" alt=""></li>
+                <li data-item="kid"><img src="images/kid2.jpg" alt=""></li>
+                <li data-item="female"><img src="images/female3.jpg" alt=""></li>
+                <li data-item="female"><img src="images/female4.jpg" alt=""></li>
+                <li data-item="female"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female"><img src="images/female4.jpg" alt=""></li>
+                <li data-item="female"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male"><img src="images/male3.jpg" alt=""></li>
+
+
+                <li data-item="male1"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid1"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid1"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female1"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male1"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male1"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid1"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid1"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female1"><img src="images/female4.jpg" alt=""></li>
+                <li data-item="female1"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male1"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male1"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid1"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid1"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="kid1"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid1"><img src="images/kid4.jpg" alt=""></li>
+
+                <li data-item="female2"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male2"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male2"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid2"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid2"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female2"><img src="images/female4.jpg" alt=""></li>
+                <li data-item="female2"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male2"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male2"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid2"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid2"><img src="images/kid4.jpg" alt=""></li>
+
+                <li data-item="kid3"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="kid3"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid3"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female3"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male3"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male3"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid3"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid3"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female3"><img src="images/female4.jpg" alt=""></li>
+                <li data-item="female3"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male3"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male3"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid3"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid3"><img src="images/kid4.jpg" alt=""></li>
+
+                <li data-item="kid4"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="kid4"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid4"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female4"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male4"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male4"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid4"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid4"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female4"><img src="images/female4.jpg" alt=""></li>
+                <li data-item="female4"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male4"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male4"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid4"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid4"><img src="images/kid4.jpg" alt=""></li>
+
+                <li data-item="kid5"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="kid5"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid5"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female5"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male5"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male5"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid5"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid5"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female5"><img src="images/female4.jpg" alt=""></li>
+                <li data-item="female5"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male5"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male5"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid5"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid5"><img src="images/kid4.jpg" alt=""></li>
+
+
+                <li data-item="kid6"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="kid6"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid6"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female6"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male6"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male6"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid6"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid6"><img src="images/kid4.jpg" alt=""></li>
+                <li data-item="female6"><img src="images/female4.jpg" alt=""></li>
+                <li data-item="female6"><img src="images/female5.jpg" alt=""></li>
+                <li data-item="male6"><img src="images/male3.jpg" alt=""></li>
+                <li data-item="male6"><img src="images/male4.jpg" alt=""></li>
+                <li data-item="kid6"><img src="images/kid3.jpg" alt=""></li>
+                <li data-item="kid6"><img src="images/kid4.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <script src="filter1.js"></script> -->
+    <!-- <script src="filter.js"></script> -->
+    <script>
+        let sortBtn = document.querySelector('.filter-menu').children;
+        let sortItem = document.querySelector('.filter-item').children;
+        for (let i = 0; i < sortBtn.length; i++) {
+            sortBtn[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn.length; j++) {
+                    sortBtn[j].classList.remove('current');
+                }
+
+                this.classList.add('current');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem.length; k++) {
+                    sortItem[k].classList.remove('active');
+                    sortItem[k].classList.add('delete');
+
+                    if (sortItem[k].getAttribute('data-item') == targetData || targetData == "all") {
+                        sortItem[k].classList.remove('delete');
+                        sortItem[k].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // =======================================
+
+        let sortBtn1 = document.querySelector('.filter-menu1').children;
+        let sortItem1 = document.querySelector('.filter-item1').children;
+
+
+        for (let i = 0; i < sortBtn1.length; i++) {
+            sortBtn1[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn1.length; j++) {
+                    sortBtn1[j].classList.remove('current1');
+                }
+
+                this.classList.add('current1');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem1.length; k++) {
+                    sortItem1[k].classList.remove('active');
+                    sortItem1[k].classList.add('delete');
+
+                    if (sortItem1[k].getAttribute('data-item') == targetData) {
+                        sortItem1[k].classList.remove('delete');
+                        sortItem1[k].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // =====================================================
+
+        let sortBtn2 = document.querySelector('.filter-menu2').children;
+        let sortItem2 = document.querySelector('.filter-item2').children;
+
+
+        for (let i = 0; i < sortBtn2.length; i++) {
+            sortBtn2[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn2.length; j++) {
+                    sortBtn2[j].classList.remove('current2');
+                }
+
+                this.classList.add('current2');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem2.length; k++) {
+                    sortItem2[k].classList.remove('active');
+                    sortItem2[k].classList.add('delete');
+
+                    if (sortItem2[k].getAttribute('data-item') == targetData) {
+                        sortItem2[k].classList.remove('delete');
+                        sortItem2[k].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // =================================================================
+
+        let sortBtn3 = document.querySelector('.filter-menu3').children;
+        let sortItem3 = document.querySelector('.filter-item3').children;
+
+
+        for (let i = 0; i < sortBtn3.length; i++) {
+            sortBtn3[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn3.length; j++) {
+                    sortBtn3[j].classList.remove('current3');
+                }
+
+                this.classList.add('current2');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem3.length; k++) {
+                    sortItem3[k].classList.remove('active');
+                    sortItem3[k].classList.add('delete');
+
+                    if (sortItem3[k].getAttribute('data-item') == targetData) {
+                        sortItem3[k].classList.remove('delete');
+                        sortItem3[k].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // ==========================================================
+
+        let sortBtn4 = document.querySelector('.filter-menu4').children;
+        let sortItem4 = document.querySelector('.filter-item4').children;
+
+
+        for (let i = 0; i < sortBtn4.length; i++) {
+            sortBtn4[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn4.length; j++) {
+                    sortBtn4[j].classList.remove('current4');
+                }
+
+                this.classList.add('current4');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem4.length; k++) {
+                    sortItem4[k].classList.remove('active');
+                    sortItem4[k].classList.add('delete');
+
+                    if (sortItem4[k].getAttribute('data-item') == targetData) {
+                        sortItem4[k].classList.remove('delete');
+                        sortItem4[k].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // ================================================
+
+
+        let sortBtn5 = document.querySelector('.filter-menu5').children;
+        let sortItem5 = document.querySelector('.filter-item5').children;
+
+
+        for (let i = 0; i < sortBtn5.length; i++) {
+            sortBtn5[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn5.length; j++) {
+                    sortBtn5[j].classList.remove('current5');
+                }
+
+                this.classList.add('current5');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem5.length; k++) {
+                    sortItem5[k].classList.remove('active');
+                    sortItem5[k].classList.add('delete');
+
+                    if (sortItem5[k].getAttribute('data-item') == targetData) {
+                        sortItem5[k].classList.remove('delete');
+                        sortItem5[k].classList.add('active');
+                    }
+                }
+            });
+        }
+        // =============================================
+
+        let sortBtn6 = document.querySelector('.filter-menu6').children;
+        let sortItem6 = document.querySelector('.filter-item6').children;
+
+
+        for (let i = 0; i < sortBtn6.length; i++) {
+            sortBtn6[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn6.length; j++) {
+                    sortBtn6[j].classList.remove('current6');
+                }
+
+                this.classList.add('current6');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem6.length; k++) {
+                    sortItem6[k].classList.remove('active');
+                    sortItem6[k].classList.add('delete');
+
+                    if (sortItem6[k].getAttribute('data-item') == targetData) {
+                        sortItem6[k].classList.remove('delete');
+                        sortItem6[k].classList.add('active');
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
